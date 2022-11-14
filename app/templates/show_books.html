@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            body {background-color: powderblue;}
+        </style>
+    </head>
+    <title>Welcome page</title>
+
+<h1 style="color: rgb(14, 9, 14);">Shabda Library</h1>
+<table border="2px">
+    <thead>
+        <tr>
+        <th>Sr No</th>
+        <th>Book Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Is Published</th>
+        </tr>
+    </thead>
+    {% for book in all_book %}
+        <tr>
+            <td>{{book.pk}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.price}}</td>  
+            <td>{{book.quantity}}</td> 
+            {% if book.is_published %}
+                <td>Yes</td>
+            {% else %}
+                <td>No</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+
+</html>

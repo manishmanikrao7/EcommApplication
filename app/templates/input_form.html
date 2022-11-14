@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <style>
+            body {background-color: powderblue;}
+        </style>
+    </head>
+    <title>Welcome page</title>
+
+<h1 style="color: rgb(14, 9, 14);">Shabda Library</h1>
+
+    <form action="{% url 'input_form' %}" method="post">
+        {% csrf_token %}
+        Book Name :- <input type="text" placeholder="Enter book name" name="bname"><br><br>
+        Book Price :- <input type="number" placeholder="Enter book price" name="bprice"><br><br>
+        Book Quantity :- <input type="number" placeholder="Enter book quantity" name="bqty"><br><br>
+        Book is published :- <input type="text" name="bpub"><br><br>
+        <input type="submit" value="SUBMIT" >
+    </form>
+
+    <a href = "{% url 'show_books' %}">Show books</a>
+
+</html>
