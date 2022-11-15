@@ -17,3 +17,9 @@ class Book(models.Model):
 
 class Company(models.Model):
     name = models.CharField(max_length=100)
+
+class ProductVideo(models.Model):
+    video = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'prodvideo'

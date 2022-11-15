@@ -58,3 +58,8 @@ def input_form(request):
 def show_books(request):
     all_books = Book.objects.all()
     return render(request, "show_books.html", {"all_book":all_books})
+
+
+def video_prod(request):
+    print("in video of prod")
+    return HttpResponse("playing the video")

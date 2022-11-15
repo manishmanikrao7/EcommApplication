@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import input_form, show_books
+from Libraryproj.app.models import ProductVideo
+from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +24,7 @@ urlpatterns = [
     # path('home/<str:locate>', homepage, name="home")
     # path('home/<int:pk>', homepage, name="home")
     path('inform/', input_form, name="input_form"),
-    path('show-books/', show_books, name="show_books")
+    path('show-books/', show_books, name="show_books"),
+
+    path('prod-vi/', video_prod, name="video_prod"),
 ]
