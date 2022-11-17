@@ -60,6 +60,21 @@ def show_books(request):
     return render(request, "show_books.html", {"all_book":all_books})
 
 
+<<<<<<< HEAD
 def video_prod(request):
     print("in video of prod")
     return HttpResponse("playing the video")
+=======
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+def user_login(request):
+    username = request.POST.get("username")
+    password = request.POST.get("password") #getting these from request.POST that is from page which we enter
+    user = authenticate(username=username, password=password) #user retuned if matched
+    if user:
+        login(request, user)
+        return HttpResponse("successfully logged in")
+
+
+>>>>>>> f1
